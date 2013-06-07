@@ -1,0 +1,83 @@
+body {
+    padding-top: 20px;
+    background-color: #010101;
+    color: white;
+}
+
+#toolbar {
+    height: 36px;
+    background-color #444444;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #303030;
+}
+
+#view {
+    padding-top: 3px;
+}
+
+#task-pane {
+    /* background-color: #70d07f; */
+    /* height: 228px; */
+    width: 33%;
+    display: box;
+    display: -moz-box;
+    box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-pack: center;
+    -moz-box-pack: center;
+    /* box-align: center;
+       -moz-box-align: center; */
+}
+
+#worker-sidebar, #manager-bar{
+    width: 33%;
+    display: box;
+    display: -moz-box;
+    box-orient: vertical;
+    -moz-box-orient: vertical;
+}
+
+.toolbar-el {
+    margin: 3px 3px 3px 3px;
+}
+
+.task {
+    padding: 0.5em;
+    border: 1px solid #DDDDDD;
+}
+
+.worker-tasks, .manager-tasks {
+    float: right;
+    font-size: 30px;
+}
+
+.task-drop-active {
+    border: 1px solid red;
+}
+
+.status-column {
+    width: 33%;
+    display: box;
+    display: -moz-box;
+    box-orient: vertical;
+    -moz-box-orient: vertical;
+}
+
+.status-item {
+    padding: 0.5em;
+    border: 1px solid cyan;
+    background-color: gray;
+}
+
+.minimal-list {
+    min-height: 100px;
+}
+
+#add-modal, #user-details-modal, #edit-modal, #task-view-modal {
+    color: black;
+}
+
+.pull-right {
+    float: right;
+}
