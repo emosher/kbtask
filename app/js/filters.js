@@ -109,5 +109,18 @@ angular.module("taskApp.filters", []).
     /**
      * Truncate a string of text so that it is no longer than the limit in characters.
      * 
-     * 
+     * @param text {String} the text to truncate
+     * @param limit {Number} the limit of the truncated string
+     * @return {String} the truncated string
      */
+    filter("truncate", function() {
+        return function(text, limit) {
+            // If the limit is greater than the string, do nothing
+            if (limit > text.length) {
+                return text;
+            } else {
+                // otherwise truncate the string and add "..."
+                return text.substring(0, limit) + " . . .";
+            }
+        };
+    });
