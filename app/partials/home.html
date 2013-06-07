@@ -1,0 +1,56 @@
+<!-- Workers Sidebar -->
+<div id="worker-sidebar">
+    
+    <div class="worker" ng-repeat="worker in workers.names | cycle:usersToShow:nextWorker">
+        <div class="worker-name">{{worker}}</div>
+        <div><a ng-click="openDetailsModal(worker)">More...</a></div>
+        <div class="worker-tasks">{{countUserTasks(worker)}}</div>
+        <div><a href="#{{worker}}">See All</a></div>
+    </div>
+    <button class="btn btn-primary btn-block" ng-click="nextWorkers()">
+        <b>.&nbsp;.&nbsp;.</b>
+    </button>
+    
+</div>
+
+<!-- Central Dashboard -->
+<div id="task-pane">
+    
+    <div> Backlog: {{counts.backlog}}</div>
+    <div> In Progress: {{counts.inProgress}}</div>
+    <div> Complete: {{counts.complete}}</div>
+    
+</div>
+
+<!-- Managers -->
+<div id="manager-bar">
+    
+    <div class="manager" ng-repeat="manager in managers.names | cycle:usersToShow:nexManager">
+        <div class="manager-name">{{manager}}</div>
+        <div><a ng-click="openDetailsModal(manager)">More...</a></div>
+        <div class="manager-tasks">{{countUserTasks(manager)}}</div>
+        <div><a href="#/{{manager}}">See All</a></div>
+    </div>
+    <button class="btn btn-primary" ng-click="nextManagers()">
+        <b>.&nbsp;.&nbsp;.</b>
+    </button>
+    
+</div>
+
+<!-- User Details Modal -->
+<div modal="userDetails" close="closeDetailsModal()" id="user-details-modal" ng-controller="userDetailCtrl">
+    
+    <div class="modal-header">
+        <h4>{{user}}'s Tasks</h4>
+    </div>
+    <div class="modal-body">
+        <p>Backlog: {{userData.backlog}}</p>
+        <p>In Progress: {{userData.inProgress}}</p>
+        <p>Completed: {{userData.complete}}</p>
+        <p><a ng-click="seeAll()">See All</a></p>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="closeDetailsModal()" data-dismiss="modal" class="btn btn-primary">Close</button>
+    </div>
+    
+</div>
