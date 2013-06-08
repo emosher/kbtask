@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html ng-app"taskApp">
+	<head>
+		<title>KB Task</title>
+
+		<meta name="author" content="Eric Mosher" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="A tool for viewing and editing team tasking in a Kanban manner" />
+
+		<!-- jQuery & jQuery UI plugins -->
+
+		<!-- Twitter Bootstrap -->
+
+		<!-- Angular JS & Angular Resource Service -->
+
+		<!-- Angular UI -->
+
+		<!-- Angular UI-Bootstrap -->
+
+		<!-- Custom Style sheet -->
+		<link rel="stylesheet" href="css/taskApp.css">
+
+	</head>
+	<body>
+
+		<!-- Toolbar to change the view -->
+		<div id="toolbar">
+			<a href="#/home" class="btn btn-primary toolbar-el"> <i class="icon-home icon-white"></i>&nbsp;Home </a>
+			<a href="#/update" class="btn btn-primary toolbar-el"> <i class="icon-list icon-white"></i>&nbsp;Update </a>
+			<a href="#add-modal" class="btn btn-primary toolbar-el"> <i class="icon-plus icon-white"></i>&nbsp;Add Task </a>
+		</div>
+
+		<!-- Add Task Modal -->
+		<div class="modal hide fade add-modal" id="add-modal" novalidate ng-controller="addCtrl">
+			<div class="modal-header">
+				<button class="btn btn-primary pull-right" data-dismiss="modal">
+					<i class="icon-remove"></i>
+				</button>
+				<h4>What needs doing?</h4>
+			</div>
+			<div class="modal-body">
+				<input ng-model="title" type="text" placeholder="Title" required />
+				<textarea ng-model="description" rows="5" cols="50" placeholder="Description"></textarea>
+				<select ng-model="managerSelect" multiple="multiple" size="5">
+					<option ng-repeat="manager in managers">{{manager}}</option>
+				</select>
+				<select ng-model="workerSelect" multiple="multiple" size=5>
+				    <option ng-repeat="worker in workers">{{worker}}</option>
+				</select>
+			</div>
+			<div class="modal-footer">
+			    <button ng-click="clear()" class="btn btn-primary">Clear</button>
+			    <button ng-click="addTask()" class="btn btn-primary" data-dismiss="modal">Add</button>
+			    <button ng-click="addTask()" class="btn btn-primary">Add Another</button>
+			</div>
+		</div>
+		
+		<!-- Angular JS view -->
+		<div id="view" ng-view></div>
+
+		<script src="js/app.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controller.js"></script>
+		<script src="js/filters.js"></script>
+		<script src="js/directive.js"></script>
+
+	</body>
+</html>
