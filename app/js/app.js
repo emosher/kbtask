@@ -9,12 +9,12 @@ angular.module("taskApp", [ "taskApp.controllers", "taskApp.services", "taskApp.
         $routeProvider.when("/home", {
             templateUrl: "partials/home.html",
             controller: "homeCtrl"
-        }).when("/update", {
-            templateUrl: "partials/update.html",
-            controller: "updateCtrl"
+        }).when("/kanban", {
+            templateUrl: "partials/kanban.html",
+            controller: "kanbanCtrl"
         }).when("/:user", {
-            templateUrl: "partials/update.html",
-            controller: "updateCtrl"
+            templateUrl: "partials/kanban.html",
+            controller: "kanbanCtrl"
         }).otherwise({
             redirectTo: "/home"
         });
