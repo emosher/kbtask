@@ -55,7 +55,7 @@ angular.module("taskApp.filters", []).
                     return "Unassigned";
                 } 
             } else {
-                return assigned.toString().replace(/,/g ", ");
+                return assigned.toString().replace(/,/g, ", ");
             }
         };
     }).
@@ -71,7 +71,7 @@ angular.module("taskApp.filters", []).
     filter("cycle", function() {
         return function(list, numberToShow, index) {
             var returnList = [], currentIndex = index;
-            for (var i = 0; i < numberToShow, i++) {
+            for (var i = 0; i < numberToShow; i++) {
                 returnList.push(list[currentIndex]);
                 currentIndex = (currentIndex + 1) % list.length;
             }
