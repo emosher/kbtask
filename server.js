@@ -18,7 +18,7 @@ app.configure(function(){
 	app.use(express.favicon());
 	app.use(express.bodyParser());
 	app.use(express.logger("dev"));
-	app.use(methodOverride());
+	app.use(express.methodOverride());
 	app.use(express.static(__dirname + "/app"));
 	app.use(app.router);
 });
@@ -65,5 +65,5 @@ app.get("*", index);
 
 // Start server!
 app.listen(app.get("port"), function(){
-	console.log("Express server listening on port " + app.get("port") + " in " + app.setting.env + " mode.");
+	console.log("Express server listening on port " + app.get("port") + " in " + app.settings.env + " mode.");
 });

@@ -82,7 +82,7 @@ exports.remove = function(req, res) {
 	collection.remove({"_id": new BSON.ObjectID(id)}, {w:1}, function(err, result) {
 		if (err) {
 			console.log("Error deleting task: " + err);
-			res.send("error": "An error occured - " + err);
+			res.send({"error": "An error occured - " + err});
 		} else {
 			console.log("" + result + " document deleted");
 			res.send(req.body);
