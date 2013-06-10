@@ -25,13 +25,13 @@
 <!-- Managers -->
 <div id="manager-bar">
     
-    <div class="manager" ng-repeat="manager in managers.names | cycle:usersToShow:nexManager">
+    <div class="manager" ng-repeat="manager in managers.names | cycle:usersToShow:nextManager">
         <div class="manager-name">{{manager}}</div>
         <div><a ng-click="openDetailsModal(manager)">More...</a></div>
         <div class="manager-tasks">{{countUserTasks(manager)}}</div>
         <div><a href="#/{{manager}}">See All</a></div>
     </div>
-    <button class="btn btn-primary" ng-click="nextManagers()">
+    <button class="btn btn-primary btn-block" ng-click="nextManagers()">
         <b>.&nbsp;.&nbsp;.</b>
     </button>
     
