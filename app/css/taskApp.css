@@ -21,10 +21,13 @@ body {
     /* height: 228px; */
     width: 33%;
     display: box;
+    display: -webkit-box;
     display: -moz-box;
     box-orient: vertical;
+    -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
     box-pack: center;
+    -webkit-box-pack: center;
     -moz-box-pack: center;
     /* box-align: center;
        -moz-box-align: center; */
@@ -33,8 +36,10 @@ body {
 #worker-sidebar, #manager-bar{
     width: 33%;
     display: box;
+    display: -webkit-box;
     display: -moz-box;
     box-orient: vertical;
+    -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
 }
 
@@ -43,6 +48,22 @@ body {
 }
 
 .task {
+    padding: 0.5em;
+    border: 1px solid #DDDDDD;
+}
+
+.worker {
+    background-color: green;
+}
+
+.manager {
+    background-color: blue;
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+
+.worker, .manager {
     padding: 0.5em;
     border: 1px solid #DDDDDD;
 }
@@ -59,8 +80,10 @@ body {
 .status-column {
     width: 33%;
     display: box;
+    display: -webkit-box;
     display: -moz-box;
     box-orient: vertical;
+    -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
 }
 
