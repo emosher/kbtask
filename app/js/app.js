@@ -4,7 +4,7 @@
  * @module taskApp
  */
 angular.module("taskApp", [ "taskApp.controllers", "taskApp.services", "taskApp.directives", 
-    "taskApp.filters", "ui.bootstrap.modal", "ui"]).
+    "taskApp.filters", "ui.bootstrap"]).
     config(["$routeProvider", function($routeProvider) {
         $routeProvider.when("/home", {
             templateUrl: "partials/home.html",

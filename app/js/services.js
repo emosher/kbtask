@@ -194,12 +194,21 @@ angular.module("taskApp.services", []).
      * Users service
      */
     service("Users", ["$http", "$rootScope", function($http, $rootScope) {
-        var workers = {}, managers = {};
+        var workers = {
+            names: ["Joe", "Jill", "Bob", "Linda", "Eddie"]
+        }, managers = {
+            names: ["Jim", "Terry", "Stephanie", "Doug", "Bill", "Will", "Eric"]
+        };
+        /** 
+         * Legacy...
+        
         $http.get("config/configuration.json").success(function(data) {
             workers = data.workers;
             managers = data.managers;
             $rootScope.$broadcast("ConfigLoaded");
         });
+        
+         */
         
         var getWorkers = function() { 
             return workers;
@@ -220,7 +229,7 @@ angular.module("taskApp.services", []).
         return {
             getWorkers: getWorkers,
             getManagers: getManagers,
-            getWorkerNames: getWorkersNames,
+            getWorkerNames: getWorkerNames,
             getManagerNames: getManagerNames
         };
         
