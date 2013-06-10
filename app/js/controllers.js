@@ -129,7 +129,7 @@ angular.module("taskApp.controllers", []).
      * Controller for the Kanban view. Allows the user to manipulate 
      * the status of the tasks.
      */
-    controller("kanbanCtrl", ["$scope", "routeParams", "$filter", "Tasks", function($scope, $routeParams, $filter, Tasks) {
+    controller("kanbanCtrl", ["$scope", "$routeParams", "$filter", "Tasks", function($scope, $routeParams, $filter, Tasks) {
         
         // Task being viewed or edited
         $scope.currTask = {};
